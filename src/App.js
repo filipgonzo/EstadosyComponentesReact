@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import Input from "./component/Input.jsx";
+import Boton from "./component/boton.jsx";
 
 function App() {
+  const [nombre, setNombre] = useState("");
+  const [password, setPassword] = useState("");
+  const Botonform = () => {
+    if(password==='252525'){
+      return <Boton/>
+    }else{
+      return <></>
+    }
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Desafios de Estados y Componentes.</h1>
+      <Input 
+      //props para nombre
+      nombre={nombre} 
+      setNombre={setNombre}
+      //props para password
+      password={password}
+      setPassword ={setPassword}
+      ></Input>
+      <Botonform></Botonform>
+      
     </div>
   );
 }
